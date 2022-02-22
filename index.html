@@ -1,50 +1,59 @@
-<body>
-  <style>
-    .square-box {
-      width: 33%;
-      height: 0;
-      padding-top: 33%;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple object detection using pre trained model in TensorFlow.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jason Mayes">
 
-    .landmark-grid-container {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top:0;
-      left:0;
-      background-color: #99999999;
-    }
-  </style>
-  <div class="container">
-    <video class="input_video"></video>
-    <canvas class="output_canvas" width="1280px" height="720px"></canvas>
-    <div class="loading">
-      <div class="spinner"></div>
-      <div class="message">
-        Loading
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+  </head>  
+  <body>
+    <h1>Multiple object detection using pre trained model in TensorFlow.js</h1>
+    
+    <header class="note"> 
+      <h2>Difficulty: Easy</h2>
+    </header>
+
+    <h2>How to use</h2>
+    <p>Please wait for the model to load before trying the demos below at which point they will become visible when ready to use.</p>
+    
+    <section id="demos" class="invisible">
+      <h2>Demo: Classifying Images</h2>
+      <p><em>Click on an image below</em> to try and recognize what is in the image using the power of Machine Learning! Notice how in this demo we not only know if the object is in the image, but also its position in the image. Very useful.</p>
+
+      <div class="classifyOnClick">
+        <img src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fdogs_flickr_publicdomain.jpg?v=1579294514974" width="100%" crossorigin="anonymous" title="Click to get classification!" />
       </div>
-    </div>
-    <a class="abs logo" href="http://www.mediapipe.dev" target="_blank">
-      <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
-        <img class="logo" src="logo_white.png" alt="" style="
-          height: 50px;">
-        <span class="title">MediaPipe</span>
+      <div class="classifyOnClick">
+        <img src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fcats_flickr_publicdomain.jpg?v=1579294753947" width="100%" crossorigin="anonymous" title="Click to get classification!" />
       </div>
-    </a>
-    <div class="shoutout">
-      <div>
-        <a href="https://solutions.mediapipe.dev/pose">
-          Click here for more info
-        </a>
+
+
+      <h2>Demo: Webcam continuous classification</h2>
+      <p>Hold some objects up close to your webcam to get a real-time classification! You must be on <a href="https://codepen.io/jasonmayes/pen/qBEJxgg">the https version of the website</a> for this to work. When ready click "enable webcam" below and accept access to the webcam when the browser asks (check the top left of your window)</p>
+      
+      <div id="liveView" class="videoView">
+        <button id="webcamButton">Enable Webcam</button>
+        <video id="webcam" autoplay></video>
       </div>
-    </div>
-  </div>
-  <div class="control-panel">
-  </div>
-  <div class='square-box'>
-    <div class="landmark-grid-container">
-    </div>
-  </div>
+    </section>
+    
+    <footer class="note">
+      <p>
+        <em>Please note:</em> This demo loads our desired machine learning model via <a href="https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd" title="View TensorFlow.js COCO-SSD on our GitHub">an easy to use JavaScript class</a> made by the TensorFlow.js team to do the hard work for you. No machine learning knowledge is needed to use this. View the link to learn more about fine tuning this machine learning model. See our other tutorials if you want to load a model directly yourself, or recognize a custom object using your own data.
+      </p>
+    </footer>
+    
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
+    
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="/script.js" defer></script>
+  </body>
+</html>
