@@ -16,11 +16,7 @@
  */
 
 /********************************************************************
- * Demo created by Jason Mayes 2020.
- *
- * Got questions? Reach out to me on social:
- * Twitter: @jason_mayes
- * LinkedIn: https://www.linkedin.com/in/creativetech
+ * Demo created by Aryan Shrestha 2022.
  ********************************************************************/
 
 const demosSection = document.getElementById('demos');
@@ -39,7 +35,7 @@ cocoSsd.load().then(function (loadedModel) {
 
 /*************************************
 /********************************************************************
-// Demo 2: Continuously grab image from webcam stream and classify it.
+// Demo : Continuously grab image from webcam stream and classify it.
 // Note: You must access the demo on https for this to work:
 // https://tensorflow-js-image-classification.glitch.me/
 ********************************************************************/
