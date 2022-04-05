@@ -1,37 +1,22 @@
-<html lang="en">
-  <head>
-    <title>object detection</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Aryan Shrestha">
-
-    <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-  </head>  
-  <body>
-    <h1>Multiple object detection using pre trained model in TensorFlow.js</h1>
-      
-      <div id="liveView" class="videoView">
-        <button id="webcamButton">Enable Webcam</button>
-        <video id="webcam" autoplay></video>
-      </div>
-    </section>
-    
-    <footer class="note">
-      <p>
-        <em>Please note:</em> This demo loads our desired machine learning model via <a href="https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd" title="View TensorFlow.js COCO-SSD on our GitHub">an easy to use JavaScript class</a> made by the TensorFlow.js team to do the hard work for you. No machine learning knowledge is needed to use this. View the link to learn more about fine tuning this machine learning model. See our other tutorials if you want to load a model directly yourself, or recognize a custom object using your own data.
-      </p>
-    </footer>
-    
-    <!-- Import TensorFlow.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
-    
-    <!-- Load the coco-ssd model to use to recognize things in images -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
- 
-    
-    <!-- Import the page's JavaScript to do some stuff -->
-    <script src="main.js"></script>
-  </body>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://unpkg.com/@tensorflow-models/speech-commands"></script>
+  </head>
+<body>
+  <div class="demo">
+        Please enable the microphone checkbox and authorize this site to access the microphone.
+        <br />
+        Once the process finished loading speak one of the word bellow and see the magic happen.
+        <br /><br />
+        <div>
+            <label class="form-switch">
+                <input type="checkbox" id="audio-switch">
+                Microphone
+            </label>
+            <div id="demo-loading" class="hidden">Loading...</div>
+        </div>
+        <div id="sp-cmd-wrapper" class="grid"></div>
+    </div>
+</body>
 </html>
